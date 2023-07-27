@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Najim",
+    "balance": 690000
+  },
+  {
+    "id": 2,
+    "name": "Panji",
+    "balance": 100000
+  },
+  {
+    "id": 3,
+    "name": "Ilxom",
+    "balance": 100000
+  },
+  {
+    "id": 4,
+    "name": "Sherzod",
+    "balance": 110000
+  },
+  {
+    "id": 5,
+    "name": "Alisher",
+    "balance": 0
+  }
+]
