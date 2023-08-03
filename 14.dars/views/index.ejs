@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #messageInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .inp {
+            background-color: #68946a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #btn {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #ekran {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Salom</h1>
+    <form>
+        <input type="text" name="message" id="messageInput" placeholder="Type your message...">
+        <select name="id" id="select"></select> <!-- Fixed the id here -->
+        <input type="submit" value="Send" class="inp">
+        <button id="btn">Hammaga</button>
+    </form>
+    <div id="ekran"></div>
+    <script type="module">
+        import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+    
+        const socket = io();
+    
+        const form = document.querySelector("form");
+        const btn = document.getElementById("btn");
+        const messageInput = document.getElementById("messageInput"); // Changed to messageInput
+        const div = document.getElementById("ekran");
+        const h1 = document.querySelector("h1");
+        const select = document.getElementById("select");
+        
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+    
+            socket.emit("all", { message: messageInput.value });
+    
+            messageInput.value = "";
+        });
+
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+    
+            socket.emit("me", { message: messageInput.value, to: select.value });
+    
+            messageInput.value = "";
+        });
+    
+        socket.on("response", ({ message, user }) => {
+            div.innerHTML += `\n${user} dan:<br> Xabar:   ${message}<br>`; // Removed unnecessary concatenation
+        });
+
+        socket.on("name", (data) => {
+            h1.innerHTML = data.name;
+        })
+
+        socket.on("users", ({ users }) => {
+            for (let i = 0; i < users.length; i++) {
+                const option = document.createElement("option");
+                option.textContent = users[i].name; // Updated textContent assignment
+                option.value = users[i].id;
+                select.append(option);
+            }
+        });
+    </script>
+</body>
+</html>
