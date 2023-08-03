@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiroyli Forma</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .formdiv {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            width: 500px;
+            text-align: center;
+        }
+
+        .formdiv form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .formdiv label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .formdiv input[type="file"],
+        .formdiv input[type="text"] {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .formdiv input[type="file"] {
+            padding: 5px;
+        }
+
+        .formdiv input[type="file"]:focus,
+        .formdiv input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .formdiv input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .formdiv input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formdiv">
+        <form action="/api/create" method="post" enctype="multipart/form-data">
+            <label for="in1">Fayl tanlang:</label>
+            <input type="file" name="video" id="in1">
+            <label for="in2">Ma'lumot kiriting:</label>
+            <input type="text" name="description" id="in2">
+            <input type="submit" value="Yuborish">
+        </form>
+    </div>
+</body>
+</html>

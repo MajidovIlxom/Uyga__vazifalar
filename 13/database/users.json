@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "email": "nitya.anan.7@gmail.com",
+    "fullName": "Oybek",
+    "password": "$2b$12$FSzIzE.s538vqdA.TltPbOemYqhzI7.G7UmpLpVo60x4l27hX/iC6",
+    "photo": "085801ab-23c4-4406-8e11-53fef29e62dc.jpg"
+  },
+  {
+    "id": 2,
+    "email": "sisatmp+c0byg@gmail.com",
+    "fullName": "Ilxom",
+    "password": "$2b$12$cNInJGad.nNJw4lecT6cje1Ilx9YX1ApohaOVwKRD1iQhw27G1Hm2",
+    "photo": "46f87eaa-947a-4ffb-a7b9-e34222da02eb.jpg"
+  }
+]
