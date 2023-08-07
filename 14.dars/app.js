@@ -7,7 +7,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public")); 
 
 app.get("/", (req, res) => {
-    // const messages = ["Hello"];
     res.render("index"); 
 });
 
@@ -16,7 +15,6 @@ app.get("/", (req, res) => {
 let users = [];
 
 io.on("connection", (socket) => {
-    // console.log("A user connected");
     users.push({id: socket.id, name: `user ` + users.length}); 
     const currentUser = users.find((user) => user.id === socket.id)
 
