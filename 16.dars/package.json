@@ -1,0 +1,18 @@
+{
+  "name": "16.dars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grammy": "^1.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
