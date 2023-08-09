@@ -1,16 +1,18 @@
 {
-  "name": "16.dars",
+  "name": "17.dars",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon src/app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "grammy": "^1.17.2"
+    "dotenv": "^16.3.1",
+    "grammy": "^1.17.2",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
