@@ -7,7 +7,7 @@ const isAuth =async(ctx, next) =>{
     const users = await Users.read()
 
     const telegramId = ctx.from.id
-    const findUser = users.find((user) => user.telegramId === telegramId)
+    const findUser = users.find((user) => user.telegramId == telegramId)
 
     if(!findUser){
         const newUser = new User(ctx.from.first_name,telegramId)

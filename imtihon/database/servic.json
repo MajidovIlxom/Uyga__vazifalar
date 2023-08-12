@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "photo": "aad3d438-9eb6-4595-87f4-9c7d9e69469c.jpg",
+    "title": "dumalab tepish",
+    "description": "bu xizmatdan f sdfvsdf sdfssf fioidnd  adonoivns oinoinoanoi",
+    "status": true
+  },
+  {
+    "id": 2,
+    "photo": "63fbf724-c66e-45fc-a9d8-ad55b0e49906.jpg",
+    "title": "sakra tepish",
+    "description": "bu xizmatdan f sdfvsdf sdfssf fioidnd  adonoivns oinoinoanoi",
+    "status": true
+  },
+  {
+    "id": 3,
+    "photo": "3651f6de-3c4b-4eb5-9a1a-8c19bb86d873.jpg",
+    "title": "sakra tepish oll",
+    "description": "bu xizmatdan f sdfvsdf sdfssf fioidnd  adonoivns oinoinoanoi",
+    "status": false
+  }
+]
